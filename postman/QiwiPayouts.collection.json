@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "03dd4ffd-d832-4e35-8c3c-9245b86b7d80",
+		"name": "QIWI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25141397"
+	},
+	"item": [
+		{
+			"name": "Payments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/agents/{{agentId}}/points/{{pointId}}/payments?Cob",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"agents",
+						"{{agentId}}",
+						"points",
+						"{{pointId}}",
+						"payments"
+					],
+					"query": [
+						{
+							"key": "Cob",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Balance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{baseUrl}}/v1/agents/{{agentId}}/points/{{pointId}}/balance"
+			},
+			"response": []
+		},
+		{
+			"name": "Payments",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{baseUrl}}/v1/agents/{{agentId}}/points/{{pointId}}/payments/{{paymentId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Payments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{baseUrl}}/v1/agents/{{agentId}}/points/{{pointId}}/payments/{{paymentId}}/execute"
+			},
+			"response": []
+		}
+	]
+}
